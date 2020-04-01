@@ -1,0 +1,2 @@
+<?php if(!defined('IN_DZZ')) exit('Access Denied'); /*a:1:{s:75:"/opt/lampp/htdocs/dzzoffice//./core/template/default/common/footer_ajax.htm";i:1585620676;}*/?>
+<?php echo output_ajax(); ?>]]></root><?php exit;?>

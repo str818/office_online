@@ -1,0 +1,1 @@
+if(!__lang){var __lang={};}__lang.delete="\u5220\u9664";
