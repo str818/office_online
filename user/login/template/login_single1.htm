@@ -3,9 +3,10 @@
 <link href="static/css/checkbox.css?{VERHASH}" rel="stylesheet">
 <link href="user/login/images/login_single1.css?{VERHASH}" rel="stylesheet" />
 <!--[if lt IE 9]>
-  <script src="static/js/jquery.placeholder.js" type="text/javascript"></script>
+	<script src="static/js/jquery.placeholder.js" type="text/javascript"></script>
 <![endif]-->
 <script type="text/javascript" src="user/scripts/login.js?{VERHASH}"></script>
+<script type="text/javascript" src="core/util/watermask.js?"></script>
 
 <!--{template common/header_simple_end}-->
 <!--{eval $loginhash = 'L'.random(4);}-->
@@ -25,10 +26,10 @@
 	<div class="modal-content">
 		 <div class="brand"> <img src="{eval echo $_G['setting']['sitelogo']?'index.php?mod=io&op=thumbnail&size=small&path='.dzzencode('attach::'.$_G['setting']['sitelogo']):'static/image/common/logo.png';}" /> </div>
 		<!--{if $_G[setting][loginset][title]}-->
-		<div class="main-title">$_G[setting][loginset][title]</div>
+<!--		<div class="main-title">$_G[setting][loginset][title]</div>-->
 		<!--{/if}--> 
 		<!--{if $_G[setting][loginset][subtitle]}-->
-		<div class="sub-title">$_G[setting][loginset][subtitle]</div>
+		<div class="main-title">$_G[setting][loginset][subtitle]</div>
 		<!--{/if}-->
 		<!--{if $_G[setting][bbclosed]}-->
 		<div class="text-danger">{lang site_closed_please_admin}</div>
@@ -70,9 +71,9 @@
 		  <p class="error-msg text-danger" id="returnmessage_$loginhash"></p>
 		  <button class="btn btn-lg btn-primary btn-block" type="submit" name="loginsubmit" value="true">{lang login_empty}</button>
 		</form>
-		<div class="copyright-container">
-		<!--{template login_copyright}-->
-		</div>
+<!--		<div class="copyright-container">-->
+<!--		&lt;!&ndash;{template login_copyright}&ndash;&gt;-->
+<!--		</div>-->
 	</div>
     </td></tr></table>
 </div>
@@ -117,7 +118,9 @@ jQuery(document).ready(function(e) {
 	}
 });
 
-</script> 
+watermark({watermark_txt: "测试测试"});
+
+</script>
 
 <script src="static/bootstrap/js/bootstrap.min.js?{VERHASH}"></script> 
 <!--{template common/footer}-->

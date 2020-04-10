@@ -13,11 +13,12 @@ class core
     // 类名映射
     protected static $map = array();
 
-    //psr4
+    // psr4
     private static $prefixLengthsPsr4 = array();
     private static $prefixDirsPsr4    = array();
     private static $fallbackDirsPsr4  = array();
 
+    // 工厂
 	public static function app($params=array()) {
 		if(!is_object(self::$_app)) {
 			self::$_app = dzz_app::instance($params);
@@ -321,15 +322,13 @@ class core
 		return $_ENV['analysis'][$key][$name];
 	}
 
+	# 加载配置文件
 	public static function loadConfig($file = null){
 	    if($file && file_exists($file)){
-
             return include $file;
-
         }else{
             return false;
         }
-
     }
 
     public static function getConfig($name){

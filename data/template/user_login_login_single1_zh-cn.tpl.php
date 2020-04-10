@@ -1,4 +1,4 @@
-<?php if(!defined('IN_DZZ')) exit('Access Denied'); /*a:6:{s:68:"/opt/lampp/htdocs/dzzoffice//./user/login/template/login_single1.htm";i:1585620690;s:83:"/opt/lampp/htdocs/dzzoffice//./core/template/default/common/header_simple_start.htm";i:1585620676;s:81:"/opt/lampp/htdocs/dzzoffice//./core/template/default/common/header_simple_end.htm";i:1585620676;s:72:"/opt/lampp/htdocs/dzzoffice//./core/template/default/common/seccheck.htm";i:1585620676;s:70:"/opt/lampp/htdocs/dzzoffice//./user/login/template/login_copyright.htm";i:1585620690;s:70:"/opt/lampp/htdocs/dzzoffice//./core/template/default/common/footer.htm";i:1585620676;}*/?>
+<?php if(!defined('IN_DZZ')) exit('Access Denied'); /*a:6:{s:68:"/opt/lampp/htdocs/dzzoffice//./user/login/template/login_single1.htm";i:1586404666;s:83:"/opt/lampp/htdocs/dzzoffice//./core/template/default/common/header_simple_start.htm";i:1585620676;s:81:"/opt/lampp/htdocs/dzzoffice//./core/template/default/common/header_simple_end.htm";i:1585620676;s:72:"/opt/lampp/htdocs/dzzoffice//./core/template/default/common/seccheck.htm";i:1585620676;s:70:"/opt/lampp/htdocs/dzzoffice//./user/login/template/login_copyright.htm";i:1585620690;s:70:"/opt/lampp/htdocs/dzzoffice//./core/template/default/common/footer.htm";i:1585620676;}*/?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,9 +37,10 @@
 <link href="static/css/checkbox.css?<?php echo VERHASH;?>" rel="stylesheet">
 <link href="user/login/images/login_single1.css?<?php echo VERHASH;?>" rel="stylesheet" />
 <!--[if lt IE 9]>
-  <script src="static/js/jquery.placeholder.js"  type="text/javascript"></script>
+<script src="static/js/jquery.placeholder.js"  type="text/javascript"></script>
 <![endif]-->
-<script type="text/javascript" src="./data/template/user_login_login_single1_login_zh-cn.js" ></script><script type="text/javascript" src="user/scripts/login.js?<?php echo VERHASH;?>" ></script><script type="text/javascript" src="./data/template/user_login_login_single1_common_zh-cn.js" ></script><script type="text/javascript" src="static/js/common.js?<?php echo VERHASH;?>" ></script>
+<script type="text/javascript" src="./data/template/user_login_login_single1_login_zh-cn.js" ></script><script type="text/javascript" src="user/scripts/login.js?<?php echo VERHASH;?>" ></script>
+<script type="text/javascript" src="core/util/watermask.js?" ></script><script type="text/javascript" src="./data/template/user_login_login_single1_common_zh-cn.js" ></script><script type="text/javascript" src="static/js/common.js?<?php echo VERHASH;?>" ></script>
 </head>
 <body id="nv_<?php echo $_G['basescript'];?>" class="<?php echo $bodyClass;?>" >
 <div id="append_parent" style="z-index:99999;"></div>
@@ -59,10 +60,10 @@
 <div class="modal-content">
  <div class="brand"> <img src="<?php echo $_G['setting']['sitelogo']?'index.php?mod=io&op=thumbnail&size=small&path='.dzzencode('attach::'.$_G['setting']['sitelogo']):'static/image/common/logo.png';?>" /> </div>
 <?php if($_G['setting']['loginset']['title']) { ?>
-<div class="main-title"><?php echo $_G['setting']['loginset']['title'];?></div>
+<!--		<div class="main-title"><?php echo $_G['setting']['loginset']['title'];?></div>-->
 <?php } ?> 
 <?php if($_G['setting']['loginset']['subtitle']) { ?>
-<div class="sub-title"><?php echo $_G['setting']['loginset']['subtitle'];?></div>
+<div class="main-title"><?php echo $_G['setting']['loginset']['subtitle'];?></div>
 <?php } if($_G['setting']['bbclosed']) { ?>
 <div class="text-danger">站点关闭中，请联系管理员</div>
 <?php } ?>
@@ -154,12 +155,14 @@ EOF;
   <p class="error-msg text-danger" id="returnmessage_<?php echo $loginhash;?>"></p>
   <button class="btn btn-lg btn-primary btn-block" type="submit" name="loginsubmit" value="true">登&nbsp;&nbsp;&nbsp;录</button>
 </form>
-<div class="copyright-container"><footer class="page-copyright page-copyright-inverse">
+<!--		<div class="copyright-container">-->
+<!--		&lt;!&ndash;<footer class="page-copyright page-copyright-inverse">
 <p>Powered By <a href="http://www.dzzoffice.com" target="_blank" >DzzOffice</a>&nbsp;<?php echo CORE_VERSION?></p>
 <?php if($_G['setting']['sitebeian']) { ?>
 <p><?php echo $_G['setting']['sitebeian'];?></p>
 <?php } ?>
-</footer></div>
+</footer>&ndash;&gt;-->
+<!--		</div>-->
 </div>
     </td></tr></table>
 </div>
@@ -204,7 +207,9 @@ jQuery(this).placeholder();
 }
 });
 
-</script> 
+watermark({watermark_txt: "测试测试"});
+
+</script>
 
 <script src="static/bootstrap/js/bootstrap.min.js?<?php echo VERHASH;?>" ></script> <?php updatesession();?><?php if(debuginfo()) { ?>
 <script type="text/javascript">

@@ -1,9 +1,6 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: a
- * Date: 2017/3/1
- * Time: 18:53
+ *  登录界面
  */
 if (!defined('IN_DZZ')) {
 
@@ -34,9 +31,9 @@ if($_G['uid']>0){
 $setting = isset($_G['setting']) ? $_G['setting']:'';
 
 if(empty($setting)){
-
 	$setting= C::t('setting')->fetch_all(array(),true);
 }
+
 $_G['allow_loginmod'] = $setting['allow_loginmod'] = unserialize($setting['allow_loginmod']);
 //Hook::listen('login_check');//检查登录状态
 
@@ -109,6 +106,12 @@ if(!isset($_GET['loginsubmit'])) {//是否提交
             'groupid' => $_G['groupid'],
             'syn' =>  0
         );
+
+//        print_r("\n=====\n");
+//        print_r($_G['member']['uid']);
+//        print_r("\n=====\n");
+
+
         $loginmessage = /*$_G['groupid'] == 8 ? 'login_succeed_inactive_member' :*/ 'login_succeed';
 
         $location = /*$_G['groupid'] == 8 ? 'user.php?mod=profile' :*/ dreferer();//待修改

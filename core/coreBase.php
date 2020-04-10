@@ -19,14 +19,16 @@ define('DZZ_CORE_DEBUG', false);
 
 define('DZZ_TABLE_EXTENDABLE', false);
 
-global $_G,$_config;
+global $_G, $_config;
 
 $_config = array();
 require DZZ_ROOT.'core/core_version.php';
 require DZZ_ROOT.'core/class/class_core.php';
 
+# 设定异常处理函数
 set_exception_handler(array('core', 'handleException'));
 
+# 加载配置文件
 $_config = array_merge($_config,core::loadConfig(DZZ_ROOT.CONFIG_NAME.BS.'config_default'.EXT));
 
 $install = core::loadConfig(DZZ_ROOT.CONFIG_NAME.BS.CONFIG_NAME.EXT);
@@ -35,9 +37,9 @@ if(!$install){
     exit();
 }
 
-$_config = array_merge($_config,$install);
+$_config = array_merge($_config, $install);
 
-$_config = array_merge($_config,core::loadConfig(DZZ_ROOT.CONFIG_NAME.BS.'config_frame'.EXT));
+$_config = array_merge($_config, core::loadConfig(DZZ_ROOT.CONFIG_NAME.BS.'config_frame'.EXT));
 
 
 if(DZZ_CORE_DEBUG) {
@@ -46,9 +48,9 @@ if(DZZ_CORE_DEBUG) {
 }
 
 if(function_exists('spl_autoload_register')) {
-    //注册系统自动加载函数
+    // 注册系统自动加载函数
     spl_autoload_register(array('core', 'autoload'));
-    //注册命名空间
+    // 注册命名空间
     core::addNamespace($_config['namespacelist']);
 } 
 

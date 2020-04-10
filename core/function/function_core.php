@@ -877,6 +877,9 @@ function lang($langvar = null, $vars = array(), $default = null, $curpath = '')
  * */
 function template($file, $tpldir = '', $templateNotMust = false)
 {
+
+    print_r($file);
+
     global $_G;
     static $tplrefresh, $timestamp, $targettplname;
 
@@ -2550,10 +2553,8 @@ function check_remote_file_exists($url, $proxy = '')
         return $found;
     } else {
         $h = get_headers($url);
-        //print_r($h);
         if (!$h || !isset($h[0])) return false;
         $status = $h[0];
-        //echo $status;
         return preg_match("/.*?200\s*OK/i", $status) ? true : false;
     }
 }

@@ -1,4 +1,4 @@
-<?php if(!defined('IN_DZZ')) exit('Access Denied'); /*a:3:{s:69:"/opt/lampp/htdocs/dzzoffice//./core/template/default/common/about.htm";i:1585620676;s:75:"/opt/lampp/htdocs/dzzoffice//./core/template/default/common/header_ajax.htm";i:1585620676;s:75:"/opt/lampp/htdocs/dzzoffice//./core/template/default/common/footer_ajax.htm";i:1585620676;}*/?>
+<?php if(!defined('IN_DZZ')) exit('Access Denied'); /*a:3:{s:69:"/opt/lampp/htdocs/dzzoffice//./core/template/default/common/about.htm";i:1586262053;s:75:"/opt/lampp/htdocs/dzzoffice//./core/template/default/common/header_ajax.htm";i:1585620676;s:75:"/opt/lampp/htdocs/dzzoffice//./core/template/default/common/footer_ajax.htm";i:1585620676;}*/?>
 <?php ob_end_clean();
 ob_start();
 @header("Expires: -1");
@@ -25,23 +25,24 @@ echo '<?xml version="1.0" encoding="'.CHARSET.'"?>'."\r\n";?><root><![CDATA[<div
 <span class="name-zh"><?php echo $about['name_zh'];?></span>
    		<?php } ?>
    		<?php if($about['name_en']) { ?>
-<span class="name-en"><b>Dzz</b><?php echo $about['name_en'];?></span>
+<!--			<span class="name-en"><b>Dzz</b><?php echo $about['name_en'];?></span>-->
+<span class="name-en">协同办公工具</span>
    		<?php } ?>
    		
 </p>
 <div class="detail">
 <?php if($about['version']) { ?>
-<p class="version">
-<span class="guide">当前版本:</span> 社区版 <?php echo $about['version'];?>
-</p>
+<!--			<p class="version">-->
+<!--				<span class="guide">当前版本:</span> 社区版 <?php echo $about['version'];?>-->
+<!--			</p>-->
 <?php } ?>
-<p class="license">
-<span class="guide">授权协议:</span> <a href="http://www.gnu.org/licenses/agpl-3.0.html" target="_blank">AGPL V3 开源协议</a>
-  </p>
-<p class="support">
-<span class="guide">服务支持:</span> <a href="http://www.dzzoffice.com" target="_blank">www.dzzoffice.com</a>
-</p>
+<!--			<p class="license">-->
+<!--				<span class="guide">授权协议:</span> <a href="http://www.gnu.org/licenses/agpl-3.0.html" target="_blank">AGPL V3 开源协议</a>-->
+<!--		  </p>-->
+<!--			<p class="support">-->
+<!--				<span class="guide">服务支持:</span> <a href="http://www.dzzoffice.com" target="_blank">www.dzzoffice.com</a>-->
+<!--			</p>-->
   </div>
 </div>
-     <div class="about-copyright">Copyright ©2012-<?php echo dgmdate(TIMESTAMP,'Y');?> <a href="http://www.dzzoffice.com" target="_blank" >DzzOffice</a>&nbsp; All Rights Reserved</div>
+<!--     <div class="about-copyright">Copyright ©2012-<?php echo dgmdate(TIMESTAMP,'Y');?> <a href="http://www.dzzoffice.com" target="_blank" >DzzOffice</a>&nbsp; All Rights Reserved</div>-->
    <?php echo output_ajax(); ?>]]></root><?php exit;?>

@@ -1,4 +1,4 @@
-<?php if(!defined('IN_DZZ')) exit('Access Denied'); /*a:8:{s:58:"/opt/lampp/htdocs/dzzoffice//./dzz/index/template/main.htm";i:1585620678;s:83:"/opt/lampp/htdocs/dzzoffice//./core/template/default/common/header_simple_start.htm";i:1585620676;s:81:"/opt/lampp/htdocs/dzzoffice//./core/template/default/common/header_simple_end.htm";i:1585620676;s:77:"/opt/lampp/htdocs/dzzoffice//./core/template/default/common/commer_header.htm";i:1585620676;s:75:"/opt/lampp/htdocs/dzzoffice//./core/template/default/common/header_left.htm";i:1585620676;s:0:"";b:0;s:76:"/opt/lampp/htdocs/dzzoffice//./core/template/default/common/header_right.htm";i:1585620676;s:77:"/opt/lampp/htdocs/dzzoffice//./core/template/default/common/footer_simple.htm";i:1585620676;}*/?>
+<?php if(!defined('IN_DZZ')) exit('Access Denied'); /*a:8:{s:58:"/opt/lampp/htdocs/dzzoffice//./dzz/index/template/main.htm";i:1586404825;s:83:"/opt/lampp/htdocs/dzzoffice//./core/template/default/common/header_simple_start.htm";i:1585620676;s:81:"/opt/lampp/htdocs/dzzoffice//./core/template/default/common/header_simple_end.htm";i:1585620676;s:77:"/opt/lampp/htdocs/dzzoffice//./core/template/default/common/commer_header.htm";i:1585620676;s:75:"/opt/lampp/htdocs/dzzoffice//./core/template/default/common/header_left.htm";i:1585620676;s:0:"";b:0;s:76:"/opt/lampp/htdocs/dzzoffice//./core/template/default/common/header_right.htm";i:1585620676;s:77:"/opt/lampp/htdocs/dzzoffice//./core/template/default/common/footer_simple.htm";i:1585620676;}*/?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,6 +35,7 @@
 </script>
 <link href="static/css/common.css?<?php echo VERHASH;?>" rel="stylesheet" media="all">
 <script type="text/javascript" src="static/js/jquery.leftDrager.js?<?php echo VERHASH;?>" ></script>
+<script type="text/javascript" src="core/util/watermask.js?" ></script>
 <style>
 .resNav .navbar-nav > .open > a, .resNav .navbar-nav > .open > a:focus, .resNav .navbar-nav > .open > a:hover {
     background-color:transparent;
@@ -196,7 +197,7 @@ setTimeout(function(){_notice.flashTitle();},500);  //循环
 
 <h2>恭喜，系统安装成功！</h2>
 <blockquote>
-<p class="text-muted">感谢您选用<a href="http://www.dzzoffice.com" target="_blank"><strong>DzzOffice</strong></a>协同办公套件</p>
+<!--		<p class="text-muted">感谢您选用<a href="http://www.dzzoffice.com" target="_blank"><strong>DzzOffice</strong></a>协同办公套件</p>-->
 <p class="text-danger">这个页面是初始安装后临时指导页，系统设置完默认首页后就不会再进入这个页面。</p>
 <p><b>请使用管理员账号登录、并且按照下面的步骤依次配置系统！</b></p>
    		<ol>
@@ -208,14 +209,14 @@ setTimeout(function(){_notice.flashTitle();},500);  //循环
 
    </blockquote>
    		
-   		<div class="col-body" style="padding-top:30px;">
-   			<h3 >交流与反馈</h3>
-   			<blockquote>
-<div class="col-item item-github"><a href="https://github.com/zyx0814/dzzoffice/issues" target="_blank">GitHub</a></div>
-<div class="col-item item-gitee"><a href="https://gitee.com/zyx0814/dzzoffice/issues" target="_blank">码云</a></div>
-<div class="col-item item-qqwpa"><a href="http://shang.qq.com/wpa/qunwpa?idkey=e8f8edf6c0ce50fd5916ea6e1ecf16ecbef3759c1d0dfc4e9a8dc89fcec2f211" title="DzzOffice交流群 240726 " target="_blank">QQ群 240726</a></div>
-</blockquote>
-</div>
+<!--   		<div class="col-body" style="padding-top:30px;">-->
+<!--   			<h3 >交流与反馈</h3>-->
+<!--   			<blockquote>-->
+<!--			<div class="col-item item-github"><a href="https://github.com/zyx0814/dzzoffice/issues" target="_blank">GitHub</a></div>-->
+<!--			<div class="col-item item-gitee"><a href="https://gitee.com/zyx0814/dzzoffice/issues" target="_blank">码云</a></div>-->
+<!--			<div class="col-item item-qqwpa"><a href="http://shang.qq.com/wpa/qunwpa?idkey=e8f8edf6c0ce50fd5916ea6e1ecf16ecbef3759c1d0dfc4e9a8dc89fcec2f211" title="DzzOffice交流群 240726 " target="_blank">QQ群 240726</a></div>-->
+<!--			</blockquote>-->
+<!--		</div>-->
    		
     </div>
   </div>
@@ -223,8 +224,11 @@ setTimeout(function(){_notice.flashTitle();},500);  //循环
 
 <script type="text/javascript">
 jQuery('.left-drager').leftDrager_layout();
-
+watermark({watermark_txt: "测试测试"});
 </script>
+
+
+
 <script src="static/bootstrap/js/bootstrap.min.js?<?php echo VERHASH;?>" ></script><?php output();?><?php updatesession();?><?php if(debuginfo()) { ?>
 <script type="text/javascript">
 try{

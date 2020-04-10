@@ -18,6 +18,7 @@ class Route{
 
             $mod = !in_array($dzz->var['mod'], $modarray) && (!preg_match('/^\w+$/', $dzz->var['mod'])) ? $_config['default_mod'] : $dzz->var['mod'];
 
+
             $_GET['mod'] = $mod;
         }
 }

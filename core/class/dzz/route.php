@@ -15,6 +15,7 @@ class Route{
         $mod = !empty($params[MOULD]) ? $params[MOULD]:$_config['default_mod'];
 
         $op  = !empty($params[DIVIDE]) ? $params[DIVIDE]:$_config['default_op'];
+
         if(empty($mod)){
 
             if($_G['uid']<1 && !defined('ALLOWGUEST') && $_G['setting']['loginset']['available']){

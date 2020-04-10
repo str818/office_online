@@ -74,8 +74,8 @@ class dzz_app extends dzz_base{
         }
     }
 
+    // 初始化
     public function init() {
-
         if(!$this->initated) {
             $this->_init_setting();
             $this->_init_user();
@@ -454,6 +454,7 @@ class dzz_app extends dzz_base{
         }
     }
 
+    // 初始化用户
     private function _init_user() {
         if($this->init_user) {
             if($auth = getglobal('auth', 'cookie')) {
@@ -466,17 +467,13 @@ class dzz_app extends dzz_base{
             }
 
             if(!empty($user) && $user['password'] == $dzz_pw && ($user['status']<1 || $user['uid']==1)) {//加上判断用户是否被停用
-
                 $this->var['member'] = $user;
             } else {
                 $user = array();
                 $this->_init_guest();
             }
 
-
-
             $this->cachelist[] = 'usergroup_'.$this->var['member']['groupid'];
-
 
         } else {
             $this->_init_guest();
@@ -486,7 +483,6 @@ class dzz_app extends dzz_base{
         if($this->var['member'] && $this->var['group']['radminid'] == 0 && $this->var['member']['adminid'] > 0 && $this->var['member']['groupid'] != $this->var['member']['adminid'] && !empty($this->var['cache']['admingroup_'.$this->var['member']['adminid']])) {
             $this->var['group'] = array_merge($this->var['group'], $this->var['cache']['admingroup_'.$this->var['member']['adminid']]);
         }
-
 
         if(empty($this->var['cookie']['lastvisit'])) {
             $this->var['member']['lastvisit'] = TIMESTAMP - 3600;
@@ -513,7 +509,6 @@ class dzz_app extends dzz_base{
         setglobal('username', getglobal('username', 'member'));
         setglobal('adminid', getglobal('adminid', 'member'));
         setglobal('groupid', getglobal('groupid', 'member'));
-
     }
 
     private function _init_guest() {
@@ -587,6 +582,7 @@ class dzz_app extends dzz_base{
         setglobal('currenturl_encode', base64_encode('http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']));
     }
 
+    // 初始化设置
     private function _init_setting() {
         if($this->init_setting) {
             if(empty($this->var['setting'])) {
@@ -606,7 +602,7 @@ class dzz_app extends dzz_base{
         define('VERHASH',isset($this->var['setting']['verhash'])?$this->var['setting']['verhash']:random(3));
     }
 
-    //初始化之前导入数据库钩子
+    // 初始化之前导入数据库钩子
     private function _init_hook(){
         $tagfile = CACHE_DIR . BS . 'tags' . EXT;
         $data = array();

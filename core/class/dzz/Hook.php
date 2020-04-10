@@ -71,49 +71,33 @@ class Hook
      * @param bool   $once   只获取一个有效返回值
      * @return mixed
      */
-    public static function listen($tag, &$params = null, $extra = null,$once = false)
-    {
-        $results = array();
+    public static function listen ($tag, &$params = null, $extra = null,$once = false) {
 
+        $results = array();
         $tags    = static::get($tag);
 
         $break = false;
 
         foreach ($tags as $key => $name) {
-
             if(is_array($name)){
+
                 foreach($name as $val){
                     $results[$key] = self::exec($val, $tag, $params, $extra,$break);
-
                     if (false === $results[$key] || $break == true) {
                         break;
-
                     } elseif($once) {
-
                         break;
                     }
                 }
-
             }else{
-
-
                 $results[$key] = self::exec($name, $tag, $params, $extra,$break);
-
                 if (false === $results[$key] || $break == true) {
-
-                    // 如果返回false 则中断行为执行
                     break;
-
                 } elseif ($once) {
-
                     break;
-
                 }
-
             }
-
         }
-
         return $once ? end($results) : $results;
     }
 
@@ -127,6 +111,7 @@ class Hook
      */
     public static function exec($class, $tag = '', &$params = null,$extra = null,&$break)
     {
+
         if(strpos($class,'|') !== false){//判断是否规定了作用域，并判断作用域确定是否执行钩子
             $rangArr = explode('|',$class);
             $class = $rangArr[0];
@@ -162,14 +147,11 @@ class Hook
             $class  = get_class($class);
 
         } elseif (strpos($class, '::')) {
-
             $result = call_user_func_array($class, array( & $params, $extra));
-
         } else {
             $obj    = new $class();
             $method = ($tag && is_callable(array($obj, $method))) ? $method : 'run';
             $result = $obj->$method($params, $extra,$break);
-
         }
         return $result;
     }

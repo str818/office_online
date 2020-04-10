@@ -1,6 +1,7 @@
 <!--{template common/header_simple_start}-->
 <link href="static/css/common.css?{VERHASH}" rel="stylesheet" media="all">
 <script type="text/javascript" src="static/js/jquery.leftDrager.js?{VERHASH}"></script>
+<script type="text/javascript" src="core/util/watermask.js?"></script>
 <style>
 .resNav .navbar-nav > .open > a, .resNav .navbar-nav > .open > a:focus, .resNav .navbar-nav > .open > a:hover {
     background-color:transparent;
@@ -79,7 +80,7 @@
 		
 		<h2>{lang system_install_success}</h2>
 		<blockquote>
-		<p class="text-muted">{lang thank_you_of}</p>
+<!--		<p class="text-muted">{lang thank_you_of}</p>-->
 		<p class="text-danger">{lang after_installed_tip}</p>
 			<p><b>{lang after_installed_help}</b></p>
    		<ol>
@@ -91,14 +92,14 @@
 		
    </blockquote>
    		
-   		<div class="col-body" style="padding-top:30px;">
-   			<h3 >{lang Communication_and_feedback}</h3>
-   			<blockquote>
-			<div class="col-item item-github"><a href="https://github.com/zyx0814/dzzoffice/issues" target="_blank">GitHub</a></div>
-			<div class="col-item item-gitee"><a href="https://gitee.com/zyx0814/dzzoffice/issues" target="_blank">码云</a></div>
-			<div class="col-item item-qqwpa"><a href="http://shang.qq.com/wpa/qunwpa?idkey=e8f8edf6c0ce50fd5916ea6e1ecf16ecbef3759c1d0dfc4e9a8dc89fcec2f211" title="DzzOffice交流群 240726 " target="_blank">QQ群 240726</a></div>
-			</blockquote>
-		</div>
+<!--   		<div class="col-body" style="padding-top:30px;">-->
+<!--   			<h3 >{lang Communication_and_feedback}</h3>-->
+<!--   			<blockquote>-->
+<!--			<div class="col-item item-github"><a href="https://github.com/zyx0814/dzzoffice/issues" target="_blank">GitHub</a></div>-->
+<!--			<div class="col-item item-gitee"><a href="https://gitee.com/zyx0814/dzzoffice/issues" target="_blank">码云</a></div>-->
+<!--			<div class="col-item item-qqwpa"><a href="http://shang.qq.com/wpa/qunwpa?idkey=e8f8edf6c0ce50fd5916ea6e1ecf16ecbef3759c1d0dfc4e9a8dc89fcec2f211" title="DzzOffice交流群 240726 " target="_blank">QQ群 240726</a></div>-->
+<!--			</blockquote>-->
+<!--		</div>-->
    		
     </div>
   </div>
@@ -106,7 +107,10 @@
 
 <script type="text/javascript">
 	jQuery('.left-drager').leftDrager_layout();
-	
+	watermark({watermark_txt: "测试测试"});
 </script>
+
+
+
 <script src="static/bootstrap/js/bootstrap.min.js?{VERHASH}"></script>
 <!--{template common/footer_simple}-->
