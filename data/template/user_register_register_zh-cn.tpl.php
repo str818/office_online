@@ -172,7 +172,7 @@ EOF;
           </form>
         </div>
         <div class="copyright-container"><footer class="page-copyright page-copyright-inverse">
-<p>Powered By <a href="http://www.dzzoffice.com" target="_blank" >DzzOffice</a>&nbsp;<?php echo CORE_VERSION?></p>
+<!--<p>Powered By <a href="http://www.dzzoffice.com" target="_blank" >DzzOffice</a>&nbsp;--><?php //echo CORE_VERSION?><!--</p>-->
 <?php if($_G['setting']['sitebeian']) { ?>
 <p><?php echo $_G['setting']['sitebeian'];?></p>
 <?php } ?>

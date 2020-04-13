@@ -224,7 +224,6 @@ setTimeout(function(){_notice.flashTitle();},500);  //循环
 
 <script type="text/javascript">
 jQuery('.left-drager').leftDrager_layout();
-watermark({watermark_txt: "测试测试"});
 </script>
 
 

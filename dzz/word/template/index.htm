@@ -34,6 +34,7 @@
     </ul>
 </nav>
 <div class="bs-container clearfix" style="height: 100%">
+
     <div class="bs-left-container  clearfix" style="height: 100%;z-index: 1000;">
         <div class="app-name"><a style="cursor: pointer;">{eval echo lang('docs')}</a></div>
         <div class="leftItem">
@@ -148,7 +149,11 @@
         </div>
     </div>
 </div>
+
 <script type="text/javascript">
+
+
+
     var mod_url = '{MOD_URL}';
     function showTemp(el) {
         jQuery(el).hide();
@@ -218,7 +223,7 @@
                 jQuery(".edit-use").children(".temp-table:last").find("tr:last").after(jQuery(html).first().find("tr"));
                 jQuery(".loader").replaceWith(jQuery(html).filter(':gt(0)'));
             } else {
-                jQuery(".loader").replaceWith(html);  
+                jQuery(".loader").replaceWith(html);
             }
        })
    }
@@ -237,7 +242,7 @@
        showDialog('{eval echo lang(true_remove_file)}','confirm','',function () {
            var dpath = [jQuery(t).parents(".item").data('dpath')];
            var rid =jQuery(t).parents(".item").data('rid');
-           jQuery.post('{MOD_URL}&op=ajax&do=deletedoc', {'rids': dpath}, function(data){ 
+           jQuery.post('{MOD_URL}&op=ajax&do=deletedoc', {'rids': dpath}, function(data){
                if (data.sucessicoids) {
                    jQuery(t).parents(".item").remove();
                } else {
@@ -248,7 +253,7 @@
    }
 
 jQuery(document).ready(function(){
-    jQuery('.upload').fileupload({ 
+    jQuery('.upload').fileupload({
         url: '{MOD_URL}&op=ajax&do=uploads&container={$setting[savepath]}',
         dataType: 'json',
         autoUpload: true,
@@ -289,8 +294,6 @@ jQuery(document).ready(function(){
             });
         });
 })
-
-
 </script>
 
 <!-- The jQuery UI widget factory, can be omitted if jQuery UI is already included -->

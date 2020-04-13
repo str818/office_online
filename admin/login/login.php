@@ -142,7 +142,6 @@ function html_login_form() {
 
                 </div>
                 <input name="submit" value="$lang1[login]" type="submit" class="btn btn-primary"  />
-                <div class="copyright">Powered by <a href="http://www.dzzoffice.com/" target="_blank">DzzOffice</a> &copy; 2012-$year</div>
              </div>
              
 		 </form>

@@ -207,8 +207,6 @@ jQuery(this).placeholder();
 }
 });
 
-watermark({watermark_txt: "测试测试"});
-
 </script>
 
 <script src="static/bootstrap/js/bootstrap.min.js?<?php echo VERHASH;?>" ></script> <?php updatesession();?><?php if(debuginfo()) { ?>

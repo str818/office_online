@@ -24,15 +24,16 @@ class template {
         $this->tplname = $tplfile;
         $this->templateNotMust = $templateNotMust;
 	    $tplfile = $this->parse_tplfile($tplfile,$tpldir,true);
+//	    print_r($tplfile);
         $this->check_language();
         $cachefile = './data/template/'.$this->tplkey. '_'.str_replace('/', '_', $this->tplname).'_'.$this->default_language.'.tpl.php';
         $this->includeTemplate[$tplfile] = filemtime($tplfile);
-		if(!$this->chakcacahefile($cachefile)){
-			$content = file_get_contents($tplfile);
-			$parsefile = $this->compiler($content,$cachefile);
-		}else{
+//		if(!$this->chakcacahefile($cachefile)){
+//			$content = file_get_contents($tplfile);
+//			$parsefile = $this->compiler($content,$cachefile);
+//		}else{
             $parsefile =DZZ_ROOT.'/'.$cachefile;
-        }
+//        }
         return $parsefile;
 	}
 	private function compiler($content,$cachefile){

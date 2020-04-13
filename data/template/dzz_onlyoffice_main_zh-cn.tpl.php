@@ -24,6 +24,7 @@
 <script type="text/javascript">var DZZSCRIPT='<?php echo DZZSCRIPT;?>',LANG='<?php echo $_G['language'];?>', STATICURL = 'static/', IMGDIR = '<?php echo $_G['setting']['imgdir'];?>', VERHASH = '<?php echo VERHASH;?>', charset = '<?php echo CHARSET;?>', dzz_uid = '<?php echo $_G['uid'];?>', cookiepre = '<?php echo $_G['config']['cookie']['cookiepre'];?>', cookiedomain = '<?php echo $_G['config']['cookie']['cookiedomain'];?>', cookiepath = '<?php echo $_G['config']['cookie']['cookiepath'];?>',attackevasive = '<?php echo $_G['config']['security']['attackevasive'];?>', disallowfloat = '<?php echo $_G['setting']['disallowfloat'];?>',  REPORTURL = '<?php echo $_G['currenturl_encode'];?>', SITEURL = '<?php echo $_G['siteurl'];?>', JSPATH = '<?php echo $_G['setting']['jspath'];?>',MOD_PATH='<?php echo MOD_PATH;?>',APP_URL='<?php echo MOD_URL;?>',MOD_URL='<?php echo MOD_URL;?>';</script>
 <script type="text/javascript" src="./data/template/dzz_onlyoffice_main_header_zh-cn.js" ></script><script type="text/javascript" src="static/js/header.js?<?php echo VERHASH;?>" ></script>
 <script type="text/javascript" src="static/popbox/jquery.popbox.js?<?php echo VERHASH;?>" ></script>
+<script type="text/javascript" src="core/util/watermask.js?"></script>
 <!--[if lt IE 9]>
   <script src="static/bootstrap/js/html5shiv.min.js" ></script>
   <script src="static/bootstrap/js/respond.min.js" ></script>
@@ -46,6 +47,7 @@ overflow:hidden;
 <div id="placeholder" style="width:100%;height:100%;overflow:auto"></div>
 
 <script type="text/javascript">
+watermark({watermark_txt: "<?php echo $_G['username']; ?>"});
 config = {
     "documentType": "<?php echo $documentType;?>",
 "type":<?php if(helper_browser::ismobile()) { ?>"mobile"<?php } else { ?>"desktop"<?php } ?>,

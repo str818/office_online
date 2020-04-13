@@ -875,10 +875,7 @@ function lang($langvar = null, $vars = array(), $default = null, $curpath = '')
  * 模板函数
  * $file=>模板,$tpldir=>模板文件夹，$templateNotMust=>模板不存在时返回空字符串，屏蔽错误提示，默认不开启
  * */
-function template($file, $tpldir = '', $templateNotMust = false)
-{
-
-    print_r($file);
+function template($file, $tpldir = '', $templateNotMust = false) {
 
     global $_G;
     static $tplrefresh, $timestamp, $targettplname;
