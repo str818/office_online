@@ -27,7 +27,7 @@
 		 <div class="brand"> <img src="{eval echo $_G['setting']['sitelogo']?'index.php?mod=io&op=thumbnail&size=small&path='.dzzencode('attach::'.$_G['setting']['sitelogo']):'static/image/common/logo.png';}" /> </div>
 		<!--{if $_G[setting][loginset][title]}-->
 <!--		<div class="main-title">$_G[setting][loginset][title]</div>-->
-		<!--{/if}--> 
+		<!--{/if}-->
 		<!--{if $_G[setting][loginset][subtitle]}-->
 		<div class="main-title">$_G[setting][loginset][subtitle]</div>
 		<!--{/if}-->
@@ -40,7 +40,7 @@
 			<input type="hidden" name="referer" value="{$referer}" />
 			<!--{if $auth}-->
 			<input type="hidden" name="auth" value="$auth" />
-			<!--{else}--> 
+			<!--{else}-->
 			<div class="form-group">
 				<input type="text" class="form-control" id="email_$loginhash" placeholder="{lang email_username}" name="email"  autocomplete="off">
 			</div>
@@ -48,11 +48,11 @@
 				<input type="text" class="form-control" id="password3_$loginhash" placeholder="{lang user_login_password}" name="password" onfocus="this.type='password'" autocomplete="off">
 			</div>
 			<!--{/if}-->
-			
+
 
 		   <!--{if $seccodecheck}-->
-		  <div class="form-group seccode-wrapper clearfix"> 
-			<!--{template common/seccheck}--> 
+		  <div class="form-group seccode-wrapper clearfix">
+			<!--{template common/seccheck}-->
 		  </div>
 		  <!--{/if}-->
 		  <div class="form-group  clearfix">
@@ -60,10 +60,10 @@
 			  <input type="checkbox" name="cookietime" id="cookietime_$loginhash" value="2592000" $cookietimecheck />
 			  <label for="cookietime_$loginhash">{lang automatic_login_within_thirtydays}</label>
 			</div>
-			<!--{if $_G['setting']['regstatus']>0}--> 
-			<a  class="pull-right"  href="user.php?mod=register&referer={eval echo urlencode($referer);}"  <!--{if !empty($_GET['inajax'])}-->onclick="_login.register($referer);return false;"<!--{/if}--> title="$_G['setting']['reglinkname']">$_G['setting']['reglinkname']</a> 
-			<span class="spacer  pull-right">|</span> 
-			<!--{/if}--> 
+			<!--{if $_G['setting']['regstatus']>0}-->
+			<a  class="pull-right"  href="user.php?mod=register&referer={eval echo urlencode($referer);}"  <!--{if !empty($_GET['inajax'])}-->onclick="_login.register($referer);return false;"<!--{/if}--> title="$_G['setting']['reglinkname']">$_G['setting']['reglinkname']</a>
+			<span class="spacer  pull-right">|</span>
+			<!--{/if}-->
 			<a class="pull-right"  href="user.php?mod=login&op=logging&action=lostpasswd">{lang getpassword}</a> </div>
 			<div class="third-wrapper clearfix">
 				<!--{hook third_login}-->
@@ -71,9 +71,7 @@
 		  <p class="error-msg text-danger" id="returnmessage_$loginhash"></p>
 		  <button class="btn btn-lg btn-primary btn-block" type="submit" name="loginsubmit" value="true">{lang login_empty}</button>
 		</form>
-<!--		<div class="copyright-container">-->
-<!--		&lt;!&ndash;{template login_copyright}&ndash;&gt;-->
-<!--		</div>-->
+
 	</div>
     </td></tr></table>
 </div>
@@ -86,9 +84,9 @@
   		</div>
 	</div>
 </div>
-<!--{if $_G['setting']['pwdsafety']}--> 
-<script type="text/javascript" src="user/scripts/md5.js?{VERHASH}" reload="1"></script> 
-<!--{/if}--> 
+<!--{if $_G['setting']['pwdsafety']}-->
+<script type="text/javascript" src="user/scripts/md5.js?{VERHASH}" reload="1"></script>
+<!--{/if}-->
 <script type="text/javascript">
 
 var pwdclear = 1;
@@ -117,8 +115,6 @@ jQuery(document).ready(function(e) {
 		});
 	}
 });
-
-watermark({watermark_txt: "测试测试"});
 
 </script>
 

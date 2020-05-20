@@ -188,7 +188,7 @@
 
 
 <script type="text/javascript">
-    watermark({watermark_txt: "<?php echo $_G['username']; ?>"});
+    watermark("<?php echo $_G['username']; ?>");
     jQuery(document).ready(function (e) {
         _header.init('<?php echo FORMHASH;?>');//初始化头部效果
         //_header.Topcolor();

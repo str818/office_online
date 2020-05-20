@@ -103,7 +103,7 @@
  </form>
 </div>
 <script type="text/javascript">
-watermark({watermark_txt: "<?php echo $_G['username']; ?>"});
+watermark("<?php echo $_G['username']; ?>");
 jQuery('#searchval').focus(function (e) {//头部搜索框变颜色
     jQuery(this).closest('.input-search').addClass('focus');
 if(this.value!='') jQuery('#emptysearchcondition').show();

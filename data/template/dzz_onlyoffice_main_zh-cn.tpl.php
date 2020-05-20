@@ -47,7 +47,7 @@ overflow:hidden;
 <div id="placeholder" style="width:100%;height:100%;overflow:auto"></div>
 
 <script type="text/javascript">
-watermark({watermark_txt: "<?php echo $_G['username']; ?>"});
+watermark("<?php echo $_G['username']; ?>");
 config = {
     "documentType": "<?php echo $documentType;?>",
 "type":<?php if(helper_browser::ismobile()) { ?>"mobile"<?php } else { ?>"desktop"<?php } ?>,

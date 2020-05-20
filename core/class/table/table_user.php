@@ -202,7 +202,6 @@ class table_user extends dzz_table
         if($users[$uid]['adminid']==1) $users[$uid]['self'] = 2;
 
         return $users[$uid];
-
     }
 
 	public function fetch_uid_by_username($username, $fetch_archive = 0) {

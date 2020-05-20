@@ -19,7 +19,7 @@
         <div class="left-drager-op">
             <div class="left-drager-sub"></div>
         </div>
-    </div>  
+    </div>
     <!-- 结束 -->
     <!-- 右边部分 -->
     <div class="bs-main-container clearfix"> 
@@ -109,13 +109,14 @@
         jQuery('#imagedata').val(inst.getDataURL());
         jQuery('#avatar_form_btn').button('loading');
         jQuery.post('user.php?mod=profile&op=avatar', jQuery('#avatar_form').serialize(), function(json) {
-            if(json.msg == 'success') {
-                showmessage('{lang avatar_uploaded_successfully_time}', 'success', 3000, 1);
-                window.setTimeout(function() { window.location.href = 'user.php?mod=profile&op=avatar&t=' + new Date().getTime(); }, 3000);
-            } else {
-                showmessage(json.error, 'success', 3, 1);
-            }
-            jQuery('#avatar_form_btn').button('reset');
+            console.log(json);
+            // if(json.msg == 'success') {
+            //     showmessage('{lang avatar_uploaded_successfully_time}', 'success', 3000, 1);
+            //     window.setTimeout(function() { window.location.href = 'user.php?mod=profile&op=avatar&t=' + new Date().getTime(); }, 3000);
+            // } else {
+            //     showmessage(json.error, 'success', 3, 1);
+            // }
+            // jQuery('#avatar_form_btn').button('reset');
         }, 'json');
         return false;
     }
