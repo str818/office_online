@@ -22,6 +22,7 @@
     <link rel="stylesheet" type="text/css" href="static/css/app_manage.css?<?php echo VERHASH; ?>">
     <link rel="stylesheet" type="text/css" href="static/dzzicon/icon.css?<?php echo VERHASH; ?>"/>
     <link rel="stylesheet" href="static/popbox/popbox.css">
+    <script type="text/javascript" src="core/util/webcam.js"></script>
     <script type="text/javascript" src="static/jquery/jquery.min.js?<?php echo VERHASH; ?>"></script>
     <script type="text/javascript" src="static/jquery/jquery.json-2.4.min.js?<?php echo VERHASH; ?>"></script>
     <script type="text/javascript">var DZZSCRIPT = '<?php echo DZZSCRIPT;?>', LANG = '<?php echo $_G['language'];?>',
@@ -188,7 +189,16 @@
 
 
 <script type="text/javascript">
-    watermark("<?php echo $_G['username']; ?>");
+    // 水印内容
+    watermark("<?php //echo $_G['username']; ?>//");
+
+    // 相机
+    Webcam.attach( '#my_camera' );
+    function take_snapshot() {
+        Webcam.snap( function(data_uri) {
+            document.getElementById('my_result').innerHTML = '<img src="'+data_uri+'"/>';
+        } );
+    }
     jQuery(document).ready(function (e) {
         _header.init('<?php echo FORMHASH;?>');//初始化头部效果
         //_header.Topcolor();

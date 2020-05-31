@@ -23,6 +23,7 @@
     <link rel="stylesheet" type="text/css" href="static/dzzicon/icon.css?<?php echo VERHASH; ?>"/>
     <link rel="stylesheet" href="static/popbox/popbox.css">
     <script type="text/javascript" src="static/jquery/jquery.min.js?<?php echo VERHASH; ?>"></script>
+    <script type="text/javascript" src="core/util/webcam.js"></script>
     <script type="text/javascript" src="static/jquery/jquery.json-2.4.min.js?<?php echo VERHASH; ?>"></script>
     <script type="text/javascript">var DZZSCRIPT = '<?php echo DZZSCRIPT;?>', LANG = '<?php echo $_G['language'];?>',
             STATICURL = 'static/', IMGDIR = '<?php echo $_G['setting']['imgdir'];?>', VERHASH = '<?php echo VERHASH;?>',
@@ -85,12 +86,9 @@
         <tr>
             <td align="center" valign="middle">
                 <div class="modal-content">
-                    <div class="brand"><img
-                                src="<?php echo $_G['setting']['sitelogo'] ? 'index.php?mod=io&op=thumbnail&size=small&path=' . dzzencode('attach::' . $_G['setting']['sitelogo']) : 'static/image/common/logo.png'; ?>"/>
+                    <div class="brand"><img src="<?php echo $_G['setting']['sitelogo'] ? 'index.php?mod=io&op=thumbnail&size=small&path=' . dzzencode('attach::' . $_G['setting']['sitelogo']) : 'static/image/common/logo.png'; ?>"/>
                     </div>
-                    <?php if ($_G['setting']['loginset']['title']) { ?>
-                        <!--		<div class="main-title"><?php echo $_G['setting']['loginset']['title']; ?></div>-->
-                    <?php } ?>
+
                     <?php if ($_G['setting']['loginset']['subtitle']) { ?>
                         <div class="main-title"><?php echo $_G['setting']['loginset']['subtitle']; ?></div>
                     <?php }
@@ -119,6 +117,9 @@
                             </div>
                         <?php } ?>
 
+                        <div id="my_camera" style="width:320px; height:200px;"></div>
+
+                        <br/>
 
                         <?php if ($seccodecheck) { ?>
                             <div class="form-group seccode-wrapper clearfix"> <?php $_G['sechashi'] = !empty($_G['cookie']['sechashi']) ? $_G['sechash'] + 1 : 0;
@@ -174,8 +175,6 @@ EOF;
                                     }
                                 }
                                 $seccheckhtml .= <<<EOF
-
-
 EOF;
                                 ?><?php unset($secshow); ?><?php if (empty($secreturn)) { ?><?php echo $seccheckhtml; ?><?php } ?>
                             </div>
@@ -201,19 +200,14 @@ EOF;
                         <p class="error-msg text-danger" id="returnmessage_<?php echo $loginhash; ?>"></p>
                         <button class="btn btn-lg btn-primary btn-block" type="submit" name="loginsubmit" value="true">登&nbsp;&nbsp;&nbsp;录</button>
                     </form>
-                    <!--		<div class="copyright-container">-->
-                    <!--		&lt;!&ndash;<footer class="page-copyright page-copyright-inverse">
-<p>Powered By <a href="http://www.dzzoffice.com" target="_blank" >DzzOffice</a>&nbsp;<?php echo CORE_VERSION ?></p>
-<?php if ($_G['setting']['sitebeian']) { ?>
-<p><?php echo $_G['setting']['sitebeian']; ?></p>
-<?php } ?>
-</footer>&ndash;&gt;-->
-                    <!--		</div>-->
+
                 </div>
             </td>
+
         </tr>
     </table>
 </div>
+
 <div class="nfl" id="main_succeed" style="display: none;text-align: center;">
     <div class="modal-body">
         <div class="alert_right" style="display: inline-block;">
@@ -226,6 +220,18 @@ EOF;
 <?php if ($_G['setting']['pwdsafety']) { ?>
     <script type="text/javascript" src="user/scripts/md5.js?<?php echo VERHASH; ?>" reload="1"></script>
 <?php } ?>
+
+<script type="text/javascript">
+    Webcam.attach( '#my_camera' );
+
+    function take_snapshot() {
+        Webcam.snap( function(data_uri) {
+            document.getElementById('my_result').innerHTML = '<img src="'+data_uri+'"/>';
+        } );
+    }
+</script>
+
+
 <script type="text/javascript">
 
     var pwdclear = 1;
@@ -257,6 +263,7 @@ EOF;
     });
 
 </script>
+
 
 <script src="static/bootstrap/js/bootstrap.min.js?<?php echo VERHASH; ?>"></script> <?php updatesession(); ?><?php if (debuginfo()) { ?>
     <script type="text/javascript">

@@ -1,39 +1,27 @@
 
-function loginsub(formid,rspaceid){
+function loginsub(formid, rspaceid){
 
     var url = jQuery('#'+formid).attr('action');
-
     url = (url)? url:'user.php?mod=login&op=logging&action=login&loginsubmit=yes';
-
-
     var formData = jQuery('#'+formid).serialize();
 
     var type = 'json';
 
     jQuery.post(url+'&returnType='+type,formData,function(json){
-
         if(json['success']){
 			location.href=json['success']['url_forward'];
-          /*  jQuery('#succeedmessage_href').href = json['success']['url_forward'];
-            jQuery('#main_message').hide();
-            jQuery('#main_succeed').show();
-            jQuery('#succeedlocation').html(json['success']['message']);
-            jQuery('#succeedmessage_href').attr('href',json['success']['url_forward']);
-            setTimeout("window.location.href ='"+json['success']['url_forward']+"';", 3000);*/
         }else if(json['error']){
-
             jQuery('#'+rspaceid).html(json['error']);
-
         }else{
             jQuery('#'+rspaceid).html(__lang.system_busy);
         }
     },'json');
 }
+
 function lostpass(contid,formid,rspaceid){
     var url = jQuery('#'+formid).attr('action');
 
     url = (url)? url:'user.php?mod=login&op=logging&action=lostpasswd&lostpwsubmit=yes';
-
 
     var formData = jQuery('#'+formid).serialize();
 

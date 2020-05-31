@@ -94,6 +94,7 @@ function watermark(content) {
     var wmTop = window.top;
     var div  = document.createElement('div')
     div.id = "idmast"
+    div.style.zIndex = "999"
     document.body.appendChild(div)
     var total = [];
     var onresize = false;

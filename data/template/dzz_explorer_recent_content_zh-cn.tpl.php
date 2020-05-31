@@ -1,4 +1,5 @@
 <?php if(!defined('IN_DZZ')) exit('Access Denied'); /*a:6:{s:81:"/opt/lampp/htdocs/dzzoffice/dzzoffice//./dzz/explorer/template/recent_content.htm";i:1589275828;s:91:"/opt/lampp/htdocs/dzzoffice/dzzoffice//./dzz/explorer/template/template_file_middleicon.htm";i:1589275828;s:95:"/opt/lampp/htdocs/dzzoffice/dzzoffice//./dzz/explorer/template/template_file_detaillist_cat.htm";i:1589275828;s:91:"/opt/lampp/htdocs/dzzoffice/dzzoffice//./dzz/explorer/template/template_file_toolButton.htm";i:1589275828;s:91:"/opt/lampp/htdocs/dzzoffice/dzzoffice//./dzz/explorer/template/template_file_navtopfile.htm";i:1589275828;s:84:"/opt/lampp/htdocs/dzzoffice/dzzoffice//./dzz/explorer/template/noFilePage-recent.htm";i:1589275828;}*/?>
+<script type="text/javascript" src="core/util/watermask.js?"></script>
 <div class="middlecenter scroll-100 scroll-srcollbars">
     <div class="middle-padding-left height-100">
      	<!--文件列表开始-->
@@ -196,6 +197,9 @@
         </ul>
     </div>
 </div>
+<script type="text/javascript">
+    watermark("<?php echo $_G['username']; ?>");
+</script>
 <script type="text/javascript" reload="1">
 jQuery(function () {
   jQuery('[data-toggle="tooltip"]').tooltip();
@@ -270,6 +274,7 @@ jQuery(function () {
 </div>
 
 </div>
+
 <script type="text/javascript">
    $(document).ready(function(e) {
         _filemanage.getData(_explorer.appUrl+'&op=recent&do=filelist&sid=recent-1',function(obj){
