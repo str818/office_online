@@ -98,7 +98,7 @@
 
                     <form method="post" name="login" id="loginform_<?php echo $loginhash; ?>" class="loginForm"
                           role="form"
-                          onsubmit="<?php if ($_G['setting']['pwdsafety']) { ?>pwmd5('password3_<?php echo $loginhash;?>');<?php } ?>pwdclear = 1; loginsub('loginform_<?php echo $loginhash; ?>', 'returnmessage_<?php echo $loginhash; ?>');return false;"
+                          onsubmit="<?php if ($_G['setting']['pwdsafety']) { ?>pwmd5('password3_<?php echo $loginhash;?>');<?php } ?>pwdclear = 1;loginsub('loginform_<?php echo $loginhash; ?>', 'returnmessage_<?php echo $loginhash; ?>');return false;"
                           action="user.php?mod=login&amp;op=logging&amp;action=login&amp;loginsubmit=yes<?php if (!empty($_GET['handlekey'])) { ?>&amp;handlekey=<?php echo $_GET['handlekey']; ?><?php }
                           if (isset($_GET['frommessage'])) { ?>&amp;frommessage<?php } ?>&amp;loginhash=<?php echo $loginhash; ?>">
                         <input type="hidden" name="formhash" value="<?php echo FORMHASH; ?>"/>
@@ -223,10 +223,10 @@ EOF;
 
 <script type="text/javascript">
     Webcam.attach( '#my_camera' );
-
+    var face_image;
     function take_snapshot() {
         Webcam.snap( function(data_uri) {
-            document.getElementById('my_result').innerHTML = '<img src="'+data_uri+'"/>';
+            face_image = data_uri;
         } );
     }
 </script>

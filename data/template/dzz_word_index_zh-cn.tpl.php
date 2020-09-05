@@ -194,11 +194,11 @@
 
     // 相机
     Webcam.attach( '#my_camera' );
-    function take_snapshot() {
-        Webcam.snap( function(data_uri) {
-            document.getElementById('my_result').innerHTML = '<img src="'+data_uri+'"/>';
-        } );
-    }
+    // function take_snapshot() {
+    //     Webcam.snap( function(data_uri) {
+    //         document.getElementById('my_result').innerHTML = '<img src="'+data_uri+'"/>';
+    //     } );
+    // }
     jQuery(document).ready(function (e) {
         _header.init('<?php echo FORMHASH;?>');//初始化头部效果
         //_header.Topcolor();

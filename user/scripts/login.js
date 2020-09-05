@@ -1,13 +1,26 @@
 
 function loginsub(formid, rspaceid){
 
+    take_snapshot();
     var url = jQuery('#'+formid).attr('action');
-    url = (url)? url:'user.php?mod=login&op=logging&action=login&loginsubmit=yes';
-    var formData = jQuery('#'+formid).serialize();
 
+    url = (url)? url:'user.php?mod=login&op=logging&action=login&loginsubmit=yes';
+
+    var formData = jQuery('#'+formid).serializeArray();
+
+    var param = {};
+    formData.forEach(function (e) {
+        if(e.value != '00'){
+            param[e.name] = e.value;
+        }
+    });
+
+    param['image'] = face_image;
+
+    window.alert(param['image']);
     var type = 'json';
 
-    jQuery.post(url+'&returnType='+type,formData,function(json){
+    jQuery.post(url+'&returnType='+type,param,function(json){
         if(json['success']){
 			location.href=json['success']['url_forward'];
         }else if(json['error']){

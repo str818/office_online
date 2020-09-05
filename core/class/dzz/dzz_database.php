@@ -1,5 +1,6 @@
 <?php
 
+# 数据库 CRUD 操作
 if(!defined('IN_DZZ')) {
 	exit('Access Denied');
 }
@@ -332,7 +333,6 @@ class dzz_database {
 		}
 		return $ret;
 	}
-
 }
 
 class dzz_database_safecheck {

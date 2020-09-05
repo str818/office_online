@@ -1,4 +1,6 @@
 <?php
+
+// 定义常量
 define('IN_DZZ', true);
 define('EXT','.php');//文件后缀
 define('BS',DIRECTORY_SEPARATOR);//系统目录分割符
@@ -16,9 +18,9 @@ define('MOULD','mod');//路由模块键名
 define('DIVIDE','op');//路由操作键名
 
 define('DZZ_CORE_DEBUG', false);
-
 define('DZZ_TABLE_EXTENDABLE', false);
 
+# 全局变量
 global $_G, $_config;
 
 $_config = array();

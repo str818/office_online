@@ -65,7 +65,6 @@ class bbcode {
 	}
 
 	function html2bbcode($message) {
-
 		if(empty($this->html_s_exp)) {
 			$this->html_s_exp = array(
 					"/\<div class=\"quote\"\>\<blockquote\>(.*?)\<\/blockquote\>\<\/div\>/is",
