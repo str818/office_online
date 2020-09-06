@@ -2,6 +2,7 @@
 function loginsub(formid, rspaceid){
 
     take_snapshot();
+
     var url = jQuery('#'+formid).attr('action');
 
     url = (url)? url:'user.php?mod=login&op=logging&action=login&loginsubmit=yes';

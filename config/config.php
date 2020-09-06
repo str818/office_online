@@ -4,10 +4,10 @@
 $_config = array();
 
 // ----------------------------  CONFIG DB  ----------------------------- //
-$_config['db']['1']['dbhost'] = 'localhost';
-//$_config['db']['1']['dbhost'] = '60.205.215.111';
+// $_config['db']['1']['dbhost'] = 'localhost';
+$_config['db']['1']['dbhost'] = '60.205.215.111';
 $_config['db']['1']['dbuser'] = 'root';
-$_config['db']['1']['dbpw'] = '';
+$_config['db']['1']['dbpw'] = 'initial123';
 $_config['db']['1']['dbcharset'] = 'utf8';
 $_config['db']['1']['pconnect'] = '0';
 $_config['db']['1']['dbname'] = 'bupt_doc';
